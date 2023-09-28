@@ -7,21 +7,16 @@
 unsigned int binary_to_uint(const char *b)
 {
 	int i;
-	unsigned int z;
+	unsigned int dec_val = 0;
 
-	z = 0;
 	if (!b)
 		return (0);
-	for (i = 0; b[i] != '\0'; i++)
+
+	for (i = 0; b[i]; i++)
 	{
-		if (b[i] != '0' && b[i] != '1')
+		if (b[i] < 48 || b[i] > 49)
 			return (0);
+		dec_val = 2 * dec_val + (b[i] - 48);
 	}
-	for (i = 0; b[i] != '\0'; i++)
-	{
-		j <<= 1;
-		if (b[i] == '1')
-			j += 1;
-	}
-	return (z);
+	return (dec_val);
 }

@@ -1,1 +1,0 @@
-struc type project
